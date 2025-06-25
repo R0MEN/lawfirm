@@ -1,95 +1,131 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import "./MainPage.scss";
+import Header from "./Header/header.js";
+import React, { useEffect } from "react";
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>app/page.js</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+  const springX = useSpring(mouseX, { stiffness: 100, damping: 10 });
+  const springY = useSpring(mouseY, { stiffness: 100, damping: 10 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      mouseX.set(e.clientX / 10);
+      mouseY.set(e.clientY / 10);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  return (
+    <main>
+      <Header />
+      <section className="hero">
+        <div className="container">
+          <div className="hero-content">
+            <div className="content-left">
+              <div className="badge">СТВОРЮЄМО</div>
+              <h1 className="main-title">Створюємо сайти, які працюють на вас</h1>
+              <p className="description">
+                Our company has a rich history of delivering high-quality web solutions tailored to meet our clients' needs. Our mission is to provide professional support, tailored solutions, and use modern technologies to ensure high customer satisfaction.
+              </p>
+              <button className="cta">Залишити заявку</button>
+            </div>
+
+            <div className="content-right">
+              <div className="floating-elements">
+                <>
+                  <motion.img
+                    src="/images/shape2.svg"
+                    alt="Shape 2"
+                    className="shape"
+                    style={{ x: springX, y: springY }}
+                    whileHover={{ scale: 1.1 }}
+                  />
+                  <motion.img
+                    src="/images/shape1.svg"
+                    alt="Shape 1"
+                    className="shape1"
+                    style={{
+                      x: useSpring(mouseX, { stiffness: 50 }),
+                      y: useSpring(mouseY, { stiffness: 50 })
+                    }}
+                    whileHover={{ scale: 1.2, rotate: 10 }}
+                  />
+                </>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <div className="links__container_turned links__container">
+          <ul className="features-list">
+            <li>Сайти візитки</li>
+            <li>Корпоративні сайти</li>
+            <li>Технічні завдання</li>
+            <li>Дизайн</li>
+            <li>Верстка</li>
+            <li>Кодинг</li>
+            <li>Хостинг</li>
+            <li>Сайти візитки</li>
+            <li>Корпоративні сайти</li>
+            <li>Технічні завдання</li>
+            <li>Дизайн</li>
+            <li>Верстка</li>
+            <li>Кодинг</li>
+            <li>Хостинг</li>
+            <li>Сайти візитки</li>
+            <li>Корпоративні сайти</li>
+            <li>Технічні завдання</li>
+            <li>Дизайн</li>
+            <li>Верстка</li>
+            <li>Кодинг</li>
+            <li>Хостинг</li>
+            <li>Сайти візитки</li>
+            <li>Корпоративні сайти</li>
+            <li>Технічні завдання</li>
+            <li>Дизайн</li>
+            <li>Верстка</li>
+            <li>Кодинг</li>
+            <li>Хостинг</li>
+          </ul>
+        </div>
+        <div className="links__container">
+          <ul className="features-list">
+            <li>Сайти візитки</li>
+            <li>Корпоративні сайти</li>
+            <li>Технічні завдання</li>
+            <li>Дизайн</li>
+            <li>Верстка</li>
+            <li>Кодинг</li>
+            <li>Хостинг</li>
+            <li>Сайти візитки</li>
+            <li>Корпоративні сайти</li>
+            <li>Технічні завдання</li>
+            <li>Дизайн</li>
+            <li>Верстка</li>
+            <li>Кодинг</li>
+            <li>Хостинг</li>
+            <li>Сайти візитки</li>
+            <li>Корпоративні сайти</li>
+            <li>Технічні завдання</li>
+            <li>Дизайн</li>
+            <li>Верстка</li>
+            <li>Кодинг</li>
+            <li>Хостинг</li>
+            <li>Сайти візитки</li>
+            <li>Корпоративні сайти</li>
+            <li>Технічні завдання</li>
+            <li>Дизайн</li>
+            <li>Верстка</li>
+            <li>Кодинг</li>
+            <li>Хостинг</li>
+          </ul>
+        </div>
+      </section>
+    </main>
   );
 }
