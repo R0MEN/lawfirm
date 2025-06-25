@@ -19,7 +19,7 @@ export default function Home() {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+  }, [mouseX, mouseY]);
 
   return (
     <main>
@@ -33,7 +33,7 @@ export default function Home() {
               <p className="description">
                 Our company has a rich history of delivering high-quality web solutions tailored to meet our clients' needs. Our mission is to provide professional support, tailored solutions, and use modern technologies to ensure high customer satisfaction.
               </p>
-              <button className="cta">Залишити заявку</button>
+              <button className="btn" onClick={handleCloseMenu}>Зв&rsquo;язатись</button>
             </div>
 
             <div className="content-right">

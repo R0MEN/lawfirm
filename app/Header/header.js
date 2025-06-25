@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import "./header.scss";
+import Link from "next/link";
 const { handleSwipeGesture, toggleBurgersClasses, closeMenu } = require("./burger.js");
 
 export default function Header() {
@@ -28,13 +29,13 @@ export default function Header() {
                     </a>
                     <nav className={`header__menu${menuState.headerNavActive ? " active" : ""}`}>
                         <ul className="header__menu-list header_li_wrapper">
-                            <li><a href="/">Головна</a></li>
-                            <li><a href="/">Послуги</a></li>
-                            <li><a href="/">Наші роботи</a></li>
-                            <li><a href="/">Ціни</a></li>
-                            <li><a href="/">Про нас</a></li>
-                            <li><a href="/">Блог</a></li>
-                            <li><a href="/">Контакти</a></li>
+                            <li><Link href="/">Головна</Link></li>
+                            <li><Link href="/">Послуги</Link></li>
+                            <li><Link href="/">Наші роботи</Link></li>
+                            <li><Link href="/">Ціни</Link></li>
+                            <li><Link href="/">Про нас</Link></li>
+                            <li><Link href="/">Блог</Link></li>
+                            <li><Link href="/">Контакти</Link></li>
                         </ul>
                     </nav>
                     <button className="lang-btn">En</button>
