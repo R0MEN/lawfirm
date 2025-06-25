@@ -31,7 +31,7 @@ export default function Home() {
               <div className="badge">СТВОРЮЄМО</div>
               <h1 className="main-title">Створюємо сайти, які працюють на вас</h1>
               <p className="description">
-                Our company has a rich history of delivering high-quality web solutions tailored to meet our clients' needs. Our mission is to provide professional support, tailored solutions, and use modern technologies to ensure high customer satisfaction.
+                Our company has a rich history of delivering high-quality web solutions tailored to meet our clients needs. Our mission is to provide professional support, tailored solutions, and use modern technologies to ensure high customer satisfaction.
               </p>
               <button className="btn" onClick={handleCloseMenu}>Зв&rsquo;язатись</button>
             </div>

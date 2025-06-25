@@ -24,9 +24,9 @@ export default function Header() {
             <div className="container">
                 <img src="/images/gradi.svg" alt="" className="header__bg" />
                 <div className="row">
-                    <a href="/" className="logo">
+                    <Link href="/" className="logo">
                         <h2>LawFirm</h2>
-                    </a>
+                    </Link>
                     <nav className={`header__menu${menuState.headerNavActive ? " active" : ""}`}>
                         <ul className="header__menu-list header_li_wrapper">
                             <li><Link href="/">Головна</Link></li>
