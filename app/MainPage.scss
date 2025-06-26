@@ -140,6 +140,10 @@
         white-space: nowrap;
     }
 
+    .links__container_turned ul {
+        animation-direction: reverse;
+    }
+
     .links__container li {
         color: #FFF;
         font-size: 18px;
