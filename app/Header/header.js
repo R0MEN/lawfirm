@@ -28,7 +28,8 @@ export default function Header() {
                         <h2>LawFirm</h2>
                     </Link>
                     <nav className={`header__menu${menuState.headerNavActive ? " active" : ""}`}>
-                        <ul className="header__menu-list header_li_wrapper">
+                        <ul className="header__menu-list">
+                            <div className="header__menu-list header__menu-left">
                             <li><Link href="/">Головна</Link></li>
                             <li><Link href="/">Послуги</Link></li>
                             <li><Link href="/">Наші роботи</Link></li>
@@ -36,10 +37,13 @@ export default function Header() {
                             <li><Link href="/">Про нас</Link></li>
                             <li><Link href="/">Блог</Link></li>
                             <li><Link href="/">Контакти</Link></li>
+                            </div>
+                            <div className=" header__menu-right ">
+                                <button className="lang-btn">En</button>
+                                <button className="btn" onClick={handleCloseMenu}>Зв’язатись</button>
+                            </div>
                         </ul>
                     </nav>
-                    <button className="lang-btn">En</button>
-                    <button className="btn" onClick={handleCloseMenu}>Зв’язатись</button>
                     <div className="header__mobile-nav">
                         <div
                             className={`burger${menuState.burgerActive ? " active" : ""}`}

@@ -7,6 +7,7 @@ header li img {
 
 header {
     border-bottom: 1.5px solid rgba(255, 255, 255, 0.20);
+    padding: 0 20px;
 }
 
 .row {
@@ -19,6 +20,9 @@ header {
     h2 {
         font-size: 32px;
         font-weight: bold;
+        color: white;
+        z-index: 11;
+        position: relative;
     }
 }
 
@@ -30,7 +34,11 @@ header {
     border-radius: 8px;
     border: 2px solid #334155;
     background: transparent;
-    
+    color: white;
+}
+
+.lang-btn:hover {
+    border: 2px solid var(--1, #2D1EFF);
 }
 
 
@@ -63,11 +71,12 @@ header {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    gap: 40px;
+    gap: 20px;
     align-items: center;
 }
 
-.header_li_wrapper {
+
+.header__menu-left {
     display: flex;
     max-height: 50px;
     padding: 10px 30px;
@@ -85,6 +94,12 @@ header {
         line-height: 32px;
         letter-spacing: -0.16px;
     }
+}
+
+.header__menu-right {
+    display: flex;
+
+    gap: 20px;
 }
 
 .header__menu-list a {
@@ -162,8 +177,26 @@ header {
     }
 
     .header__menu-list a {
-        color: black;
+        color: white;
     }
+
+    .header__menu-left {
+        background: none;
+
+        li {
+            transition: 
+            background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+            padding 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        }
+        li:hover {
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.18);
+            padding: 20px 40px;
+            gap: 20px;
+        }
+    }
+
+
 
     .header__menu {
         position: absolute;
@@ -176,7 +209,7 @@ header {
         align-items: center;
         transition: all 0.3s;
         z-index: 10;
-        background: white;
+        background: #020316;
         border-right: 1px solid black;
     }
 
@@ -190,7 +223,6 @@ header {
     }
 
     .header__menu-list {
-        gap: 60px;
         flex-direction: column;
     }
 }
