@@ -184,10 +184,11 @@ header {
         background: none;
 
         li {
-            transition: 
-            background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
-            padding 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+            transition:
+                background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.3s cubic-bezier(0.4, 0, 0.2, 1),
         }
+
         li:hover {
             border-radius: 30px;
             background: rgba(255, 255, 255, 0.18);
@@ -222,7 +223,20 @@ header {
         width: 80vw;
     }
 
+
     .header__menu-list {
         flex-direction: column;
+        justify-content: space-between;
+        max-height: 500px;
+    }
+
+    .header__menu-right {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+
+        margin-top: auto;
+        padding-top: 40px;
     }
 }
