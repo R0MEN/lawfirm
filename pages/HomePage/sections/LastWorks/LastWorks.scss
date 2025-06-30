@@ -1,0 +1,49 @@
+.last-works {
+    color: white;
+    margin: 110px 0;
+
+    .more {
+        display: block;
+        margin: 60px auto 0 auto;
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 40px;
+        font-weight: 600;
+        line-height: 52px;
+        letter-spacing: -0.8px;
+    }
+
+    .work-description {
+        margin-top: 18px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .works-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .works {
+        max-width: 585px;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        transition:
+            border-radius 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+            transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .works:hover {
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+        transform: translateY(-2px);
+    }
+}
